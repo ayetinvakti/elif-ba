@@ -1,137 +1,169 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Elif-Ba | Ayetin Vakti</title>
-<meta name="description" content="Kur'an okumayı adım adım öğren: 28 harf, harekeler, cezim, şedde, tenvin, med ve Kur'an'dan dualar. Her yaş için.">
+<meta name="description" content="Kur'an okumayı adım adım öğren: 28 harf, harekeler, cezim, şedde, tenvin, med, elif lâm takısı ve özel okunuşlar. Her yaş için.">
 <link rel="canonical" href="https://ayetinvakti.github.io/elif-ba/">
 <meta property="og:title" content="Elif-Ba | Ayetin Vakti">
 <meta property="og:description" content="Kur'an okumayı adım adım öğren.">
 <meta property="og:image" content="https://ayetinvakti.github.io/og-image.png">
-<meta name="theme-color" content="#0f172a">
 <script src="https://ayetinvakti.github.io/menu.js" defer></script>
+<meta name="theme-color" content="#0b1120">
+<script>
+(function(){
+const savedLang=localStorage.getItem('user_lang')||'tr';
+document.documentElement.lang=savedLang;
+if(savedLang==='ar')document.documentElement.dir='rtl';
+const savedTheme=localStorage.getItem('theme');
+const sysDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+if(savedTheme==='light'||(!savedTheme&&!sysDark))document.documentElement.classList.add('light-mode');
+if(localStorage.getItem('custom_finish')==='glossy')document.documentElement.classList.add('finish-glossy');
+const cA=localStorage.getItem('custom_accent'),cT=localStorage.getItem('custom_text'),cB=localStorage.getItem('custom_bg');
+if(cA)document.documentElement.style.setProperty('--accent-color',cA);
+if(cT)document.documentElement.style.setProperty('--text-color',cT);
+if(cB){document.documentElement.style.setProperty('--bg-color',cB);document.documentElement.style.setProperty('--card-bg',cB)}
+const hexL=function(bg){const m=/^#([0-9a-f]{6})$/i.exec((bg||'').trim());if(!m)return null;const n=parseInt(m[1],16);const lin=c=>{c/=255;return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4)};return 0.2126*lin(n>>16)+0.7152*lin((n>>8)&255)+0.0722*lin(n&255)};
+window.syncSurface=function(bg){const r=document.documentElement,L=hexL(bg);const light=L!==null?L>0.18:r.classList.contains('light-mode');r.classList.toggle('surf-light',light);r.classList.toggle('surf-dark',!light)};
+window.applyAutoContrast=function(bg,ct){const st=document.documentElement.style,L=hexL(bg);window.syncSurface(bg);
+if(L===null){st.removeProperty('--text-muted');st.removeProperty('--border-color');if(!ct)st.removeProperty('--text-color');return}
+if(ct){st.setProperty('--text-muted','color-mix(in srgb, var(--text-color) 68%, transparent)');st.setProperty('--border-color','color-mix(in srgb, var(--text-color) 24%, transparent)');return}
+const lt=L>0.18;st.setProperty('--text-color',lt?'#0f172a':'#f8fafc');st.setProperty('--text-muted',lt?'#475569':'#cbd5e1');st.setProperty('--border-color',lt?'rgba(15,23,42,0.18)':'rgba(248,250,252,0.22)')};
+window.applyAutoContrast(cB,cT);
+const mt=document.querySelector('meta[name="theme-color"]');
+if(mt)mt.setAttribute('content',cB||(document.documentElement.classList.contains('light-mode')?'#f8fafc':'#0b1120'));
+})();
+</script>
 <style>
-:root{--bg:#0f172a;--card-bg:#1e293b;--drawer-bg:#1e293b;--text-color:#f8fafc;--text-muted:#94a3b8;--accent-color:#00bcd4;--line:rgba(128,128,128,.22);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html.light-mode{--bg:#f1f5f9;--card-bg:#fff;--drawer-bg:#fff;--text-color:#0f172a;--text-muted:#64748b;color-scheme:light}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{color-scheme:dark;--bg-color:#0b1120;--card-bg:#1e293b;--accent-color:#10b981;--text-color:#f8fafc;--text-muted:#94a3b8;--border-color:#334155;--font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+html.light-mode{color-scheme:light;--bg-color:#f8fafc;--card-bg:#ffffff;--text-color:#0f172a;--text-muted:#64748b;--border-color:#e2e8f0}
+html.surf-dark{color-scheme:dark}html.surf-light{color-scheme:light}
+html[lang="ar"]{--font-family:'Amiri','Traditional Arabic',Tahoma,serif}
+*{box-sizing:border-box;margin:0;padding:0}
 html{touch-action:manipulation}
-body{margin:0;background:var(--bg);color:var(--text-color);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5}
-.bar{display:flex;align-items:center;gap:8px;padding:10px 14px;position:sticky;top:0;background:var(--bg);z-index:5}
-.icon-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card-bg);color:var(--text-color);font-size:18px;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;font-family:inherit}
-.sp{flex:1}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-main{max-width:720px;margin:0 auto;padding:0 14px 40px}
-.hero{font-size:22px;font-weight:800;margin:6px 0 2px}
-.sub{color:var(--text-muted);font-size:13px;margin:0 0 12px}
-.tabs{display:flex;gap:6px;margin-bottom:12px}
-.tab{flex:1;padding:10px 4px;border-radius:12px;border:1px solid var(--line);background:var(--card-bg);color:var(--text-muted);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+body{font-family:var(--font-family);background-color:var(--bg-color);color:var(--text-color);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px;line-height:1.5;transition:background-color .3s,color .3s}
+.container{width:100%;max-width:600px;display:flex;flex-direction:column;gap:14px}
+.navbar{width:100%;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background-color:var(--card-bg);border:1px solid var(--border-color);border-radius:16px}
+.nav-left{display:flex;align-items:center;gap:8px}
+.back-btn,.menu-btn,.th-btn{width:42px;height:42px;border-radius:50%;background:var(--btn-bg,rgba(128,128,128,.12));border:1px solid var(--border-color);color:var(--text-color);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;font-size:1.25rem;line-height:1;padding:0;font-family:inherit;flex:none}
+@media(hover:hover){.back-btn:hover,.menu-btn:hover,.th-btn:hover{border-color:var(--accent-color);color:var(--accent-color)}}
+html[dir="rtl"] .back-btn{transform:scaleX(-1)}
+.page-head{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hero{font-size:1.4rem;font-weight:800;color:var(--accent-color);text-align:center}
+.sub{color:var(--text-muted);font-size:.85rem;text-align:center}
+.tabs{display:flex;gap:6px}
+.tab{flex:1;padding:10px 2px;border-radius:12px;border:1px solid var(--border-color);background:var(--card-bg);color:var(--text-muted);font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit}
 .tab[aria-selected=true]{background:var(--accent-color);color:#fff;border-color:transparent}
-.prog{height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin:4px 0 4px}
+.prog{height:8px;border-radius:8px;background:var(--border-color);overflow:hidden}
 .prog i{display:block;height:100%;background:var(--accent-color);width:0;transition:width .3s}
-.pt{font-size:12px;color:var(--text-muted);margin-bottom:12px}
-.card{background:var(--card-bg);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.pt{font-size:.75rem;color:var(--text-muted);margin-top:-6px}
+.card{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:14px}
+.card+.card{margin-top:12px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.lt{position:relative;padding:10px 2px 6px;border-radius:14px;border:1px solid var(--line);background:var(--card-bg);color:var(--text-color);cursor:pointer;text-align:center;font-family:inherit}
-.lt .a{display:block;font-size:34px;line-height:1.5}
-.lt .n{font-size:12px;color:var(--text-muted)}
+.lt{position:relative;padding:8px 2px 6px;border-radius:14px;border:1px solid var(--border-color);background:var(--card-bg);color:var(--text-color);cursor:pointer;text-align:center;font-family:inherit}
+.lt .a{display:block;font-size:2.1rem;line-height:1.5}
+.lt .n{font-size:.75rem;color:var(--text-muted)}
 .lt.on{border-color:var(--accent-color)}
-.lt.ok::after{content:"✓";position:absolute;top:4px;right:7px;font-size:12px;color:var(--accent-color);font-weight:800}
+.lt.ok::after{content:"✓";position:absolute;top:4px;right:7px;font-size:.75rem;color:var(--accent-color);font-weight:800}
 .ar{font-family:"Amiri","Scheherazade New","Noto Naskh Arabic","Geeza Pro","Traditional Arabic",serif;direction:rtl}
-.big{font-size:84px;line-height:1.4;text-align:center}
-.forms{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin:6px 0}
-.forms .ar{font-size:34px;line-height:1.5}
-.forms small,.hk small{display:block;font-size:11px;color:var(--text-muted)}
+.big{font-size:5.2rem;line-height:1.4;text-align:center}
+.forms,.hk{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin:6px 0}
+.hk{grid-template-columns:repeat(3,1fr)}
+.forms .ar{font-size:2.1rem;line-height:1.5}
+.hk .ar{font-size:2.4rem;line-height:1.5}
+.forms small,.hk small{display:block;font-size:.8rem;color:var(--text-muted)}
+.hk small b{color:var(--text-color);font-size:1rem}
 .bd{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0}
-.bd span{font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid var(--line);color:var(--text-muted)}
+.bd span{font-size:.75rem;padding:3px 10px;border-radius:20px;border:1px solid var(--border-color);color:var(--text-muted)}
 .bd .k{border-color:var(--accent-color);color:var(--accent-color)}
-.hk{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;text-align:center}
-.hk .ar{font-size:40px;line-height:1.5}
-.btn{width:100%;padding:11px;border-radius:12px;border:none;background:var(--accent-color);color:#fff;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;margin-top:8px}
+.btn{width:100%;padding:11px;border-radius:12px;border:none;background:var(--accent-color);color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;font-family:inherit;margin-top:8px}
 .btn.o{background:transparent;border:1px solid var(--accent-color);color:var(--accent-color)}
-h3{margin:0 0 4px;font-size:16px}
-.d{margin:2px 0 8px;font-size:14px}
-.gt{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text-muted);margin:16px 2px 8px}
+h3{font-size:1rem;margin-bottom:4px}
+.d{margin:2px 0 8px;font-size:.88rem}
+.m{font-size:.8rem;color:var(--text-muted);margin:4px 0}
+.gt{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text-muted);margin:14px 2px 6px}
 .dr{display:flex;align-items:center;gap:8px}
-.dr b{flex:1;font-size:15px}
-.dr em{font-style:normal;font-size:12px;color:var(--text-muted)}
-.ay{border-top:1px solid var(--line);padding:10px 0}
-.ay .ar{font-size:28px;line-height:1.9;text-align:right}
-.ay p{margin:4px 0;font-size:14px}
-.pl{border:1px solid var(--accent-color);color:var(--accent-color);background:transparent;border-radius:20px;padding:4px 12px;font-size:13px;cursor:pointer;font-family:inherit}
-.src{font-size:12px;color:var(--text-muted);margin-top:14px}
+.dr b{flex:1;font-size:.95rem}
+.ay{border-top:1px solid var(--border-color);padding:10px 0}
+.ay .ar{font-size:1.75rem;line-height:1.9;text-align:right}
+.ay p{margin:4px 0;font-size:.88rem}
+.pl{border:1px solid var(--accent-color);color:var(--accent-color);background:transparent;border-radius:20px;padding:4px 12px;font-size:.8rem;cursor:pointer;font-family:inherit}
+.ex{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center}
+.ex .ar{font-size:2rem;line-height:1.7;text-align:center}
+.ex div{text-align:center}.ex small{display:block;font-size:.75rem;color:var(--text-muted)}
+.sg{font-size:.7rem;color:var(--text-muted);margin-top:6px}
+.cl{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin:4px 0}
+.cl .ar{font-size:1.6rem;padding:0 6px}
+.src{font-size:.75rem;color:var(--text-muted);margin:6px 2px 24px}
 [hidden]{display:none!important}
+html.finish-glossy .navbar,html.finish-glossy .card,html.finish-glossy .lt,html.finish-glossy .tab{background-origin:border-box;background-repeat:no-repeat;background-image:linear-gradient(180deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,.04) 40%,rgba(255,255,255,0) 62%);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 6px 18px rgba(0,0,0,.25)}
+html.finish-glossy .btn,html.finish-glossy .back-btn,html.finish-glossy .menu-btn,html.finish-glossy .th-btn,html.finish-glossy .pl{background-origin:border-box;background-repeat:no-repeat;background-image:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0) 62%);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 2px 6px rgba(0,0,0,.22)}
+html.surf-light.finish-glossy .navbar,html.surf-light.finish-glossy .card,html.surf-light.finish-glossy .lt,html.surf-light.finish-glossy .tab{background-image:linear-gradient(180deg,rgba(255,255,255,.75) 0%,rgba(255,255,255,0) 55%),linear-gradient(0deg,rgba(15,23,42,.06) 0%,rgba(15,23,42,0) 40%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 6px 18px rgba(15,23,42,.12)}
+html.surf-light.finish-glossy .btn,html.surf-light.finish-glossy .back-btn,html.surf-light.finish-glossy .menu-btn,html.surf-light.finish-glossy .th-btn,html.surf-light.finish-glossy .pl{box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 2px 6px rgba(15,23,42,.15)}
 </style>
 </head>
 <body>
-<div class="bar">
-<a class="icon-btn" href="https://ayetinvakti.github.io/" aria-label="Ana sayfa">←</a>
-<button class="icon-btn" data-drawer-toggle aria-label="Menü">☰</button>
-<span class="sp"></span>
-<button class="icon-btn" id="th" aria-label="Tema">◐</button>
+<div class="container">
+<header class="navbar">
+<div class="nav-left">
+<a href="https://ayetinvakti.github.io/" class="back-btn" aria-label="Geri Dön">←</a>
+<button class="menu-btn" data-drawer-toggle aria-label="Menü" aria-controls="avmDrawer">☰</button>
 </div>
-<main>
-<h1 class="sr">Elif-Ba</h1>
+<button class="th-btn" id="th" aria-label="Tema">◐</button>
+</header>
+<h1 class="page-head" id="h1">Elif-Ba</h1>
 <div class="hero" id="hero"></div>
 <p class="sub" id="sub"></p>
 <div class="tabs" role="tablist" id="tabs"></div>
-<div class="prog"><i id="pb"></i></div>
+<div class="prog" id="pw"><i id="pb"></i></div>
 <div class="pt" id="pt"></div>
 <section id="p0"></section>
 <section id="p1" hidden></section>
 <section id="p2" hidden></section>
+<section id="p3" hidden></section>
 <p class="src" id="src"></p>
-</main>
+</div>
 <script>
 (function(){
 var T={
-tr:{hero:'Elif-Ba',sub:'Kur\'an okumayı adım adım öğren. Her yaş için.',t0:'Harfler',t1:'Harekeler',t2:'Dualar',lr:'Öğrendim',un:'Öğrenmedim',pg:'öğrenildi',pick:'Bir harfe dokun',s0:'Tek',s1:'Başta',s2:'Ortada',s3:'Sonda',th:'Kalın harf',in:'İnce harf',nj:'Sonraki harfe bitişmez',jn:'Sonraki harfe bitişir',hh:'Harekeli okunuşu',ld:'Yükleniyor…',er:'Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.',open:'Aç',close:'Kapat',all:'Hepsini dinle',stp:'Durdur',src:'Kaynaklar: harf adları, kalın harfler ve hareke/işaret bilgileri Diyanet ve MEB Kur\'an-ı Kerim öğretim programları ile TDV İslâm Ansiklopedisi ve akademik kaynaklardan derlenmiştir. Ayet metni, Diyanet meali ve ses alquran.cloud (Uthmani metin, Diyanet meali, Mishary Alafasy) üzerinden canlı gelir; metin elle yazılmaz.',g0:'Fatiha',g1:'Kısa sureler',g2:'Kur\'an\'dan dualar'},
-en:{hero:'Alif-Ba',sub:'Learn to read the Quran step by step. For every age.',t0:'Letters',t1:'Vowel marks',t2:'Supplications',lr:'Learned',un:'Not yet',pg:'learned',pick:'Tap a letter',s0:'Isolated',s1:'Initial',s2:'Medial',s3:'Final',th:'Heavy letter',in:'Light letter',nj:'Does not join the next letter',jn:'Joins the next letter',hh:'With vowel marks',ld:'Loading…',er:'Could not connect. Check your internet and try again.',open:'Open',close:'Close',all:'Play all',stp:'Stop',src:'Sources: Diyanet and MEB Quran curricula, TDV Encyclopedia of Islam and academic sources. Verse text, Diyanet translation (Turkish) and audio are loaded live from alquran.cloud.',g0:'Al-Fatiha',g1:'Short surahs',g2:'Supplications from the Quran'},
-ar:{hero:'الألف باء',sub:'تعلّم قراءة القرآن خطوة بخطوة. لكل الأعمار.',t0:'الحروف',t1:'الحركات',t2:'الأدعية',lr:'تعلّمت',un:'لم أتعلّم',pg:'تم تعلّمه',pick:'اضغط على حرف',s0:'منفصل',s1:'أول',s2:'وسط',s3:'آخر',th:'حرف مفخّم',in:'حرف مرقّق',nj:'لا يتصل بما بعده',jn:'يتصل بما بعده',hh:'مع الحركات',ld:'جارٍ التحميل…',er:'تعذّر الاتصال. تحقّق من الإنترنت وأعد المحاولة.',open:'فتح',close:'إغلاق',all:'استماع للكل',stp:'إيقاف',src:'المصادر: مناهج ديانت ووزارة التربية التركية وموسوعة TDV. نص الآيات والترجمة التركية والصوت من alquran.cloud مباشرة.',g0:'الفاتحة',g1:'السور القصيرة',g2:'أدعية من القرآن'}
+tr:{sub:"Kur'an okumayı adım adım öğren. Her yaş için.",t:["Harfler","Harekeler","Kurallar","Dualar"],lr:"Öğrendim",un:"Öğrenmedim",pg:"öğrenildi",pick:"Bir harfe dokun",s:["Tek","Başta","Ortada","Sonda"],th:"Kalın harf",inc:"İnce harf",pel:"Peltek harf",nj:"Sonraki harfe bitişmez",jn:"Sonraki harfe bitişir",hh:"Harekeli okunuşu",mh:"Çıkış yeri",ld:"Yükleniyor…",er:"Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.",open:"Aç",close:"Kapat",all:"Hepsini dinle",lg1:"Üstün e · Esre i · Ötre u ile ü arası",lg2:"Üstün a · Esre ı'dan i'ye biten ses · Ötre u",ap:"* Türkçede tam karşılığı yok, okunuş yaklaşıktır. Çıkış yerine bak, mümkünse bir hocadan dinle.",ra:"Ra: üstün ve ötre ile kalın, esre ile ince okunur.",g0:"Fatiha",g1:"Kısa sureler",g2:"Kur'an'dan dualar",src:"Kaynaklar: harf isimleri, çıkış yerleri, kalın/ince harfler, harekeler, işaretler ve özel okunuşlar MEB Kur'an-ı Kerim Hazırlık Sınıfı Ders Kitabı'ndan (2026, 2. Tema: Tecvit), elif lâm harf listeleri ayrıca eğitim kaynaklarıyla karşılaştırılarak alınmıştır. Türkçe okunuş yazıları yaklaşıktır; doğru okuyuş için fem-i muhsin bir hocadan dinlemek gerekir. Ayet metni, Diyanet meali ve ses alquran.cloud'dan canlı gelir."},
+en:{sub:"Learn to read the Quran step by step. For every age.",t:["Letters","Vowels","Rules","Duas"],lr:"Learned",un:"Not yet",pg:"learned",pick:"Tap a letter",s:["Isolated","Initial","Medial","Final"],th:"Heavy letter",inc:"Light letter",pel:"Lisped letter",nj:"Does not join the next letter",jn:"Joins the next letter",hh:"With vowel marks",mh:"Point of articulation",ld:"Loading…",er:"Could not connect. Check your internet and try again.",open:"Open",close:"Close",all:"Play all",lg1:"Ustun e · Esre i · Otre between u and ü",lg2:"Ustun a · Esre from ı to i · Otre u",ap:"* No exact Turkish equivalent; the reading is approximate. See the articulation point and, if possible, listen to a teacher.",ra:"Ra: heavy with ustun and otre, light with esre.",g0:"Al-Fatiha",g1:"Short surahs",g2:"Supplications from the Quran",src:"Sources: Turkish MEB Quran textbook (2026, Tajweed theme). Turkish readings are approximate; learn from a qualified teacher. Verse text, translation and audio are loaded live from alquran.cloud."},
+ar:{sub:"تعلّم قراءة القرآن خطوة بخطوة. لكل الأعمار.",t:["الحروف","الحركات","القواعد","الأدعية"],lr:"تعلّمت",un:"لم أتعلّم",pg:"تم تعلّمه",pick:"اضغط على حرف",s:["منفصل","أول","وسط","آخر"],th:"حرف مفخّم",inc:"حرف مرقّق",pel:"حرف رخو",nj:"لا يتصل بما بعده",jn:"يتصل بما بعده",hh:"مع الحركات",mh:"المخرج",ld:"جارٍ التحميل…",er:"تعذّر الاتصال. تحقّق من الإنترنت وأعد المحاولة.",open:"فتح",close:"إغلاق",all:"استماع للكل",lg1:"",lg2:"",ap:"* لا مقابل تركي دقيق؛ النطق تقريبي. استمع إلى معلّم.",ra:"",g0:"الفاتحة",g1:"السور القصيرة",g2:"أدعية من القرآن",src:"المصادر: كتاب القرآن الكريم لوزارة التربية التركية (2026). النطق التركي تقريبي. النص والترجمة والصوت من alquran.cloud."}
 };
-var lg='tr';try{var l=localStorage.getItem('user_lang');if(T[l])lg=l}catch(e){}
-var t=T[lg];document.documentElement.lang=lg;document.documentElement.dir=lg==='ar'?'rtl':'ltr';
+var lg=T[localStorage.getItem('user_lang')]?localStorage.getItem('user_lang'):'tr',t=T[lg];
 var $=function(s){return document.querySelector(s)};
 var ST={};try{ST=JSON.parse(localStorage.getItem('elifba_v1'))||{}}catch(e){}
 function save(){try{localStorage.setItem('elifba_v1',JSON.stringify(ST))}catch(e){}}
 function flip(k){if(ST[k])delete ST[k];else ST[k]=1;save()}
-var F='\u064E',K='\u0650',U='\u064F',SK='\u0652',SH='\u0651',T1='\u064B',T2='\u064D',T3='\u064C',ZW='\u200D';
-var LET='ا,Elif|ب,Be|ت,Te|ث,Se|ج,Cim|ح,Ha|خ,Hı|د,Dal|ذ,Zel|ر,Ra|ز,Ze|س,Sin|ش,Şın|ص,Sad|ض,Dad|ط,Tı|ظ,Zı|ع,Ayn|غ,Gayn|ف,Fe|ق,Kaf|ك,Kef|ل,Lam|م,Mim|ن,Nun|و,Vav|ه,He|ي,Ye'.split('|').map(function(x){return x.split(',')});
-var HEAVY='خصضطظغق',NJ='ادذرزو';
-// Dualar: [başlık, [[sure,ayet],...]]
-var D=[
-[0,'Fatiha',[[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7]]],
-[1,'Kevser',[[108,1],[108,2],[108,3]]],
-[1,'İhlâs',[[112,1],[112,2],[112,3],[112,4]]],
-[1,'Felak',[[113,1],[113,2],[113,3],[113,4],[113,5]]],
-[1,'Nâs',[[114,1],[114,2],[114,3],[114,4],[114,5],[114,6]]],
-[2,'Rabbenâ âtinâ (Bakara 201)',[[2,201]]],
-[2,'Rabbenâ lâ tüâhiznâ (Bakara 286)',[[2,286]]],
-[2,'Rabbenâ lâ tüzığ kulûbenâ (Âl-i İmrân 8)',[[3,8]]],
-[2,'Rabbenâ zalemnâ (A\'râf 23)',[[7,23]]],
-[2,'Rabbirhamhümâ (İsrâ 24)',[[17,24]]],
-[2,'Rabbişrah lî sadrî (Tâhâ 25-28)',[[20,25],[20,26],[20,27],[20,28]]],
-[2,'Rabbiğfir verham (Mü\'minûn 118)',[[23,118]]],
-[2,'Rabbenâ heb lenâ min ezvâcinâ (Furkân 74)',[[25,74]]],
-[2,'Rabbi innî limâ enzelte (Kasas 24)',[[28,24]]],
-[2,'Rabbiğfir lî ve li-vâlideyye (Nûh 28)',[[71,28]]]
-];
+var F='\u064E',K='\u0650',U='\u064F',SK='\u0652',SH='\u0651',T1='\u064B',T2='\u064D',T3='\u064C',DA='\u0670',CK='\u0656',ZW='\u200D';
+// [harf, ad, kök ses, çıkış yeri]
+var M1='Dil ucu ile üst ön dişlerin diplerinden çıkarılır.',M2='Dil ucu ile alt ön dişlerin iç yüzeyinden çıkarılır.',M4='Dilin ortası ile üst damağın ortasından çıkarılır.';
+var LET=[['ا','Elif','','Boğazın göğse bitişen kısmından çıkarılır.'],['ب','Be','b','Dudakların kuvvetlice kapanmasıyla çıkarılır.'],['ت','Te','t',M1],['ث','Se','s','Dil ucu ile ön dişlerin uçlarından çıkarılır. Dil, dişler arasından hafifçe görünür. Peltek bir harftir.'],['ج','Cim','c','Dil ortasının üst damağın ortasına kuvvetlice basılıp çekilmesiyle çıkarılır.'],['ح','Ha','h','Boğaz ortasının içeriden hafifçe sıkılmasıyla çıkarılır.'],['خ','Hı','h','Boğazın ağza yakın kısmından dil kökünün yükseltilmesiyle hırıltılı şekilde çıkarılır.'],['د','Dal','d',M1],['ذ','Zel','z','Dil ucu ve ön dişlerin uçlarından çıkarılır. Dil, dişler arasından hafifçe görünür. Peltek bir harftir.'],['ر','Ra','r','Dil ucu ve üst ön dişlerin üstündeki damaktan çıkarılır.'],['ز','Ze','z',M2],['س','Sin','s',M2],['ش','Şın','ş',M4],['ص','Sad','s',M2],['ض','Dad','d','Dil kenarı ile üst azı dişlerden çıkarılır.'],['ط','Tı','t',M1],['ظ','Zı','z','Dil ucu ile üst ön dişlerin uçlarından çıkarılır. Peltek bir harftir.'],['ع','Ayn',"'",'Boğaz ortasının hafifçe sıkılmasıyla çıkarılır.'],['غ','Gayn','ğ','Boğazın ağza en yakın olan kısmından çıkarılır.'],['ف','Fe','f','Üst ön dişlerin uçlarıyla alt dudağın içinden çıkarılır.'],['ق','Kaf','k','Dil kökü ve onun karşısındaki üst damaktan çıkarılır.'],['ك','Kef','k','Dil kökü ve küçük dilin önünden çıkarılır.'],['ل','Lam','l','Dilin iki kenarı ve ucu ile üst damaktan çıkarılır.'],['م','Mim','m','Dudakların normal hâlde iken kapanmasıyla çıkarılır.'],['ن','Nun','n','Dil ucu ve iki üst ön diş etlerinden çıkarılır.'],['و','Vav','v','Dudaklar ileriye doğru büzülüp ortasında küçük bir boşluk bırakılarak çıkarılır.'],['ه','He','h','Boğazın göğse bitiştiği yerden çıkarılır.'],['ي','Ye','y',M4]];
+var HEAVY='خصضطظغق',NJ='ادذرزو',PEL='ثذظ',APX='اثحخذضظعغ';
+function reads(c,s){var h=HEAVY.indexOf(c)>-1;if(c==='ر')return['ra','ri','ru'];return h?[s+'a',s+'ı~i',s+'u']:[s+'e',s+'i',s+'u~'+s+'ü']}
+var KAM='ابجحخعغفقكمويه',SEM='تثدذرزسشصضطظلن';
+var D=[[0,'Fatiha',[[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7]]],[1,'Kevser',[[108,1],[108,2],[108,3]]],[1,'İhlâs',[[112,1],[112,2],[112,3],[112,4]]],[1,'Felak',[[113,1],[113,2],[113,3],[113,4],[113,5]]],[1,'Nâs',[[114,1],[114,2],[114,3],[114,4],[114,5],[114,6]]],[2,"Rabbenâ âtinâ (Bakara 201)",[[2,201]]],[2,"Rabbenâ lâ tüâhiznâ (Bakara 286)",[[2,286]]],[2,"Rabbenâ lâ tüzığ kulûbenâ (Âl-i İmrân 8)",[[3,8]]],[2,"Rabbenâ zalemnâ (A'râf 23)",[[7,23]]],[2,"Rabbirhamhümâ (İsrâ 24)",[[17,24]]],[2,"Rabbişrah lî sadrî (Tâhâ 25-28)",[[20,25],[20,26],[20,27],[20,28]]],[2,"Rabbiğfir verham (Mü'minûn 118)",[[23,118]]],[2,"Rabbenâ heb lenâ min ezvâcinâ (Furkân 74)",[[25,74]]],[2,"Rabbi innî limâ enzelte (Kasas 24)",[[28,24]]],[2,"Rabbiğfir lî ve li-vâlideyye (Nûh 28)",[[71,28]]]];
+// harekeler ve işaretler: [başlık, işaret, açıklama, [örnek, okunuş]]
 var H=[
-['Üstün',F,'İnce harfleri "e", kalın harfleri "a" sesiyle okutur.',['ب'+F,'ق'+F,'س'+F]],
-['Esre',K,'İnce harfleri "i", kalın harfleri "ı" ile "i" arası bir sesle okutur.',['ب'+K,'ق'+K,'س'+K]],
-['Ötre',U,'İnce harfleri "u" ile "ü" arası bir sesle, kalın harfleri "u" sesiyle okutur.',['ب'+U,'ق'+U,'س'+U]],
-['Cezim (Sükûn)',SK,'Üstüne geldiği harfi ünlü almadan, yalnızca kendi ünsüz sesiyle (sakin) okutur.',['ب'+F+'ت'+SK,'م'+F+'ن'+SK]],
-['Şedde',SH,'Üstüne geldiği harfi iki kez okutur.',['ر'+F+'ب'+SH+F,'ر'+F+'ب'+SH+K]],
-['Tenvin',T1+' '+T2+' '+T3,'İki üstün "an/en", iki esre "ın/in", iki ötre "un/ün" okutur. Kelimenin son harfinde bulunur.',['ب'+T1,'ب'+T2,'ب'+T3]],
-['Uzatma harfleri (Elif, Vav, Ye)','ا و ي','Üstünden sonra elif, esreden sonra ye, ötreden sonra vav harfi sesi uzatır. Normal (tabiî) uzatma bir elif miktarıdır.',['ب'+F+'ا','ب'+K+'ي','ب'+U+'و']]
+['Üstün',F,'İnce harflere "e", kalın harflere "a" sesi verir. Örnek: se / sa.',[['س'+F,'se'],['ص'+F,'sa']]],
+['Esre',K,'İnce harflere "i" sesi verir. Kalın harflere "ı" ile başlayıp "i" ile biten bir ses verir. Örnek: si / sı~i.',[['س'+K,'si'],['ص'+K,'sı~i']]],
+['Ötre',U,'Kalın harflere "u", ince harflere "ü-u" arası bir ses verir. Örnek: su~sü / su.',[['س'+U,'su~sü'],['ص'+U,'su']]],
+['Cezim (Sükûn)',SK,'Harfi harekesiz, ünlü almadan okutur; kendinden önceki harfe bağlar. Türkçede ünsüzle biten hecelere benzer. Örnek: elif üstün + cezimli te = "et".',[['ا'+F+'ت'+SK,'et']]],
+['Şedde',SH,'Üzerinde bulunduğu harfi iki kez okutur. Şeddeli harf, birincisi cezimli ikincisi harekeli aynı iki harfin birleşmesidir; kelime başında bulunmaz. Örnek: dikkat, kulluk gibi.',[['ر'+F+'ب'+SH+F,'rabbe']]],
+['Tenvin',T1+' '+T2+' '+T3,'Harekenin sesine "nun" sesi ekler (nunlamak). Sadece isimlerin sonunda bulunur, nun yazıda gösterilmez. İki üstün: ince "en", kalın "an". İki esre: ince "in", kalın "ın~in". İki ötre: ince "un~ün", kalın "un".',[['ب'+T1,'ben'],['ب'+T2,'bin'],['ب'+T3,'bun~bün']]],
+['Uzatma harfleri (Elif, Vav, Ye)','ا و ي','Harfin sesini kendi harekesi yönünde bir elif miktarı (bir parmak kaldıracak süre kadar) uzatır. Uzatma için harfin sakin olması gerekir. Elif: üstünden sonra gelir. Vav: ötreden sonra gelir. Ye: esreden sonra gelir.',[['ب'+F+'ا','bâ'],['ب'+U+'و','bû'],['ب'+K+'ي','bî']]],
+['Ya ve vav şeklinde yazılan elif','ٰ','Kur\'an\'da elif üç biçimde bulunur: med harfi olan elif, vav şeklinde yazılan elif ve ya şeklinde yazılan elif. Son ikisi vav veya ya yazılsa da okunuşta elif gibi uzatma görevi yapar. Örnek: Mûsâ.',[['مُوسٰى','mûsâ']]],
+['Âsar ve çeker','ـٰ ـٖ','Harfin üstüne konan işarete âsar, altına konana çeker denir. İkisi de ilgili harfi bir elif miktarı uzatır. Âsardan sonra gizli bir elif, çekerden sonra gizli bir ye bulunduğu kabul edilir; yazıda görünmez ama okunur.',[['ـٰ','âsar'],['ـٖ','çeker']]]
 ];
+var hd=function(h){return h};
 // ---- iskelet
-$('#hero').textContent=t.hero;$('#sub').textContent=t.sub;$('#src').textContent=t.src;
+$('#hero').textContent='Elif-Ba';$('#sub').textContent=t.sub;$('#src').textContent=t.src;
 var tb=$('#tabs'),cur=0;
-[t.t0,t.t1,t.t2].forEach(function(n,i){var b=document.createElement('button');b.className='tab';b.setAttribute('role','tab');b.textContent=n;b.onclick=function(){go(i)};tb.appendChild(b)});
-function go(i){cur=i;[].forEach.call(tb.children,function(b,j){b.setAttribute('aria-selected',j===i)});for(var j=0;j<3;j++)$('#p'+j).hidden=j!==i;prog()}
-function prog(){var n=0,all=0;if(cur===0){all=28;LET.forEach(function(x,i){if(ST['l'+i])n++})}else if(cur===2){all=D.length;D.forEach(function(x,i){if(ST['d'+i])n++})}else{all=0}
-var p=$('#pb').parentNode,pt=$('#pt');if(!all){p.hidden=pt.hidden=true;return}p.hidden=pt.hidden=false;$('#pb').style.width=(n*100/all)+'%';pt.textContent=n+' / '+all+' '+t.pg}
+t.t.forEach(function(n,i){var b=document.createElement('button');b.className='tab';b.setAttribute('role','tab');b.textContent=n;b.onclick=function(){go(i)};tb.appendChild(b)});
+function go(i){cur=i;[].forEach.call(tb.children,function(b,j){b.setAttribute('aria-selected',j===i)});for(var j=0;j<4;j++)$('#p'+j).hidden=j!==i;prog()}
+function prog(){var n=0,all=0;if(cur===0){all=28;LET.forEach(function(x,i){if(ST['l'+i])n++})}else if(cur===3){all=D.length;D.forEach(function(x,i){if(ST['d'+i])n++})}
+var w=$('#pw'),pt=$('#pt');if(!all){w.hidden=pt.hidden=true;return}w.hidden=pt.hidden=false;$('#pb').style.width=(n*100/all)+'%';pt.textContent=n+' / '+all+' '+t.pg}
 // ---- harfler
 var sel=-1,P0=$('#p0');
 function drawL(){
@@ -139,20 +171,36 @@ var h='<div class="grid">';
 LET.forEach(function(x,i){h+='<button class="lt'+(i===sel?' on':'')+(ST['l'+i]?' ok':'')+'" data-i="'+i+'"><span class="a ar">'+x[0]+'</span><span class="n">'+x[1]+'</span></button>'});
 h+='</div><div id="det"></div>';P0.innerHTML=h;
 [].forEach.call(P0.querySelectorAll('.lt'),function(b){b.onclick=function(){sel=+b.dataset.i;drawL();var d=$('#det');if(d&&d.scrollIntoView)d.scrollIntoView({behavior:'smooth',block:'nearest'})}});
-var d=$('#det');if(sel<0){d.innerHTML='<p class="sub" style="text-align:center;margin-top:12px">'+t.pick+'</p>';prog();return}
-var c=LET[sel][0],nm=LET[sel][1],nj=NJ.indexOf(c)>-1,hv=HEAVY.indexOf(c)>-1;
-var ini=nj?c:c+ZW,med=nj?ZW+c:ZW+c+ZW,fin=ZW+c;
-d.innerHTML='<div class="card" style="margin-top:12px"><div class="big ar">'+c+'</div><h3 style="text-align:center">'+nm+'</h3>'+
-'<div class="bd"><span class="'+(hv?'k':'')+'">'+(hv?t.th:t.in)+'</span><span>'+(nj?t.nj:t.jn)+'</span></div>'+
-'<div class="forms"><div><div class="ar">'+c+'</div><small>'+t.s0+'</small></div><div><div class="ar">'+ini+'</div><small>'+t.s1+'</small></div><div><div class="ar">'+med+'</div><small>'+t.s2+'</small></div><div><div class="ar">'+fin+'</div><small>'+t.s3+'</small></div></div>'+
-'<div class="gt" style="text-align:center;margin:10px 0 4px">'+t.hh+'</div><div class="hk"><div><div class="ar">'+c+F+'</div></div><div><div class="ar">'+c+K+'</div></div><div><div class="ar">'+c+U+'</div></div></div>'+
+var d=$('#det');if(sel<0){d.innerHTML='<p class="sub" style="margin-top:12px">'+t.pick+'</p>';prog();return}
+var x=LET[sel],c=x[0],nj=NJ.indexOf(c)>-1,hv=HEAVY.indexOf(c)>-1,pl=PEL.indexOf(c)>-1,ap=APX.indexOf(c)>-1;
+var ini=nj?c:c+ZW,med=nj?ZW+c:ZW+c+ZW,fin=ZW+c,r=reads(c,x[2]),mk=[F,K,U];
+var hk='';for(var v=0;v<3;v++)hk+='<div><div class="ar">'+c+mk[v]+'</div><small><b>'+r[v]+(ap?'*':'')+'</b></small></div>';
+d.innerHTML='<div class="card" style="margin-top:12px"><div class="big ar">'+c+'</div><h3 style="text-align:center">'+x[1]+'</h3>'+
+'<div class="bd"><span class="'+(hv?'k':'')+'">'+(hv?t.th:t.inc)+'</span>'+(pl?'<span class="k">'+t.pel+'</span>':'')+'<span>'+(nj?t.nj:t.jn)+'</span></div>'+
+'<div class="forms"><div><div class="ar">'+c+'</div><small>'+t.s[0]+'</small></div><div><div class="ar">'+ini+'</div><small>'+t.s[1]+'</small></div><div><div class="ar">'+med+'</div><small>'+t.s[2]+'</small></div><div><div class="ar">'+fin+'</div><small>'+t.s[3]+'</small></div></div>'+
+'<div class="gt" style="text-align:center;margin:10px 0 2px">'+t.hh+'</div><div class="hk">'+hk+'</div><p class="sg" style="text-align:center">'+(hv?t.lg2:t.lg1)+'</p>'+(c==='ر'?'<p class="sg" style="text-align:center">'+t.ra+'</p>':'')+(ap?'<p class="sg" style="text-align:center">'+t.ap+'</p>':'')+
+'<div class="gt" style="margin:12px 0 2px">'+t.mh+'</div><p class="d">'+x[3]+'</p>'+
 '<button class="btn'+(ST['l'+sel]?' o':'')+'" id="lb">'+(ST['l'+sel]?'✓ '+t.un:t.lr)+'</button></div>';
 $('#lb').onclick=function(){flip('l'+sel);drawL()};prog()}
 // ---- harekeler
-(function(){var h='';H.forEach(function(x){h+='<div class="card"><h3>'+x[0]+'</h3><div class="ar" style="font-size:34px;text-align:center;line-height:1.6">'+x[1]+'</div><p class="d">'+x[2]+'</p><div class="hk">';
-x[3].forEach(function(e){h+='<div><div class="ar">'+e+'</div></div>'});h+='</div></div>'});$('#p1').innerHTML=h})();
+(function(){var h='';H.forEach(function(x){h+='<div class="card"><h3>'+x[0]+'</h3><div class="ar" style="font-size:2rem;text-align:center;line-height:1.6">'+x[1]+'</div><p class="d">'+x[2]+'</p><div class="ex">';
+x[3].forEach(function(e){h+='<div><div class="ar">'+e[0]+'</div><small>'+e[1]+'</small></div>'});h+='</div></div>'});$('#p1').innerHTML=h})();
+// ---- kurallar
+function cl(s){return'<div class="cl">'+s.split('').map(function(c){return'<span class="ar">'+c+'</span>'}).join('')+'</div>'}
+(function(){
+var cards=[
+['Kalın, ince ve peltek harfler','<p class="d">Kalın harfler (7): '+cl('خصضطظغق')+'İnce harfler: '+cl('ابتثجحدذرزسشعفكلمنوهي')+'Peltek harfler (3): '+cl('ثذظ')+'<small class="m">Peltek harflerden ث ve ذ ince, ظ kalındır.</small></p><p class="d">Ra (ر): ince seslidir ancak harekesi üstün veya ötre olduğunda kalın, esre olduğunda ince okunur.</p>'],
+['Bitişmeyen harfler','<p class="d">Bu altı harf kelime içinde kendinden sonraki harfe bitişmez; ortada ve sondaki yazılışları aynıdır:</p>'+cl('ادذرزو')],
+['Elif lâm takısı','<p class="d">Arapçada isimleri belirli yapar. Kamerî harften önce lâm cezimli okunur. Şemsî harften önce lâm yazılır ama okunmaz, sonraki harf şeddeli okunur.</p><p class="d">Kamerî harfler (14):</p>'+cl(KAM)+'<p class="d">Şemsî harfler (14):</p>'+cl(SEM)+'<div class="ex"><div><div class="ar">اَلْقَمَرُ</div><small>el-kameru (lâm okunur)</small></div><div><div class="ar">اَلشَّمْسُ</div><small>eş-şemsü (lâm okunmaz)</small></div></div>'],
+['Lafzatullah','<p class="d">Allah lafzındaki lâm (ل) harfi: kendinden önceki harfin harekesi üstün veya ötre ise kalın okunur. Esre ise ince okunur.</p>'],
+['Zamir (ـهُ ـهِ)','<p class="d">Kelime sonundaki he (ه) zamirdir. Kendinden önceki harf harekeliyse zamir uzatılarak, cezimli veya sakinse uzatılmadan okunur.</p><div class="ex"><div><div class="ar">مَالُهُ</div><small>mâlühû (uzatılır)</small></div><div><div class="ar">عَنْهُ</div><small>anhu (uzatılmaz)</small></div></div>'],
+['Med ve kasır','<p class="d">Mushaflarda bazı kelimelerin altında küçük ve eğik yazılmış "med" veya "kasır" ibaresi bulunur. Med: harf uzatılarak okunur. Kasır: harf uzatılmadan okunur.</p>'],
+['Okunmayan elif','<p class="d">Bazı yerlerde harekesiz elif yazıldığı hâlde okunmaz. Elif lâm takısındaki elif, kendinden önce bir harf geldiğinde okunmaz. Örnekte ilk elif uzatma yapar, sondaki elifin okunuşa etkisi yoktur.</p><div class="ex"><div><div class="ar">كَانُوا</div><small>kânû</small></div></div>'],
+['Hurufımukattaa','<p class="d">29 surenin başında bulunan, kelime oluşturmayan müstakil harflerdir. Harekesiz yazılır, isimleriyle okunur. 14 harften oluşur:</p>'+cl('احرسصطعقكلمنهي')+'<div class="ex"><div><div class="ar">الٓمٓ</div><small>elif lâm mîm</small></div></div><p class="m">Bakara, Âl-i İmrân, A\'râf, Yûnus, Hûd, Yûsuf, Ra\'d, İbrâhîm, Hicr, Meryem, Tâhâ, Şuarâ, Neml, Kasas, Ankebût, Rûm, Lokmân, Secde, Yâsîn, Sâd, Mü\'min, Fussilet, Şûrâ, Zuhruf, Duhân, Câsiye, Ahkâf, Kâf ve Kalem surelerinin başında bulunur.</p>']
+];
+var h='';cards.forEach(function(c){h+='<div class="card"><h3>'+c[0]+'</h3>'+c[1]+'</div>'});$('#p2').innerHTML=h})();
 // ---- dualar
-var P2=$('#p2'),open={},cache={},au=null,q=[];
+var P3=$('#p3'),open={},cache={},au=null,q=[];
 function stop(){q=[];if(au){au.pause();au=null}}
 function playUrl(u,done){if(au)au.pause();au=new Audio(u);au.onended=done||null;au.play().catch(function(){})}
 function load(s,a){var k=s+':'+a;if(!cache[k])cache[k]=fetch('https://api.alquran.cloud/v1/ayah/'+k+'/editions/quran-uthmani,tr.diyanet,ar.alafasy').then(function(r){return r.json()}).then(function(j){if(!j.data||j.data.length<3)throw 0;return{ar:j.data[0].text,tr:j.data[1].text,au:j.data[2].audio}});return cache[k]}
@@ -161,10 +209,10 @@ function drawD(){
 var h='',last=-1,gn=[t.g0,t.g1,t.g2];
 D.forEach(function(x,i){if(x[0]!==last){h+='<div class="gt">'+gn[x[0]]+'</div>';last=x[0]}
 h+='<div class="card"><div class="dr"><b>'+x[1]+'</b><button class="pl" data-o="'+i+'">'+(open[i]?t.close:t.open)+'</button></div><div id="d'+i+'"'+(open[i]?'':' hidden')+'></div></div>'});
-P2.innerHTML=h;
-[].forEach.call(P2.querySelectorAll('[data-o]'),function(b){b.onclick=function(){var i=+b.dataset.o;stop();open[i]=!open[i];drawD();if(open[i])fill(i)}});
+P3.innerHTML=h;
+[].forEach.call(P3.querySelectorAll('[data-o]'),function(b){b.onclick=function(){var i=+b.dataset.o;stop();open[i]=!open[i];drawD();if(open[i])fill(i)}});
 D.forEach(function(x,i){if(open[i])fill(i)});prog()}
-function fill(i){var box=$('#d'+i),x=D[i];box.innerHTML='<p class="sub">'+t.ld+'</p>';
+function fill(i){var box=$('#d'+i),x=D[i];box.innerHTML='<p class="m">'+t.ld+'</p>';
 Promise.all(x[2].map(function(r){return load(r[0],r[1])})).then(function(res){
 var h='';res.forEach(function(v,j){h+='<div class="ay"><div class="ar">'+esc(v.ar)+'</div><p>'+esc(v.tr)+'</p><button class="pl" data-a="'+j+'">▶</button></div>'});
 h+='<button class="btn o" data-all="1">▶ '+t.all+'</button><button class="btn'+(ST['d'+i]?' o':'')+'" data-lr="1">'+(ST['d'+i]?'✓ '+t.un:t.lr)+'</button>';
@@ -172,14 +220,9 @@ box.innerHTML=h;
 [].forEach.call(box.querySelectorAll('[data-a]'),function(b){b.onclick=function(){stop();playUrl(res[+b.dataset.a].au)}});
 box.querySelector('[data-all]').onclick=function(){stop();q=res.map(function(v){return v.au});(function nx(){var u=q.shift();if(u)playUrl(u,nx)})()};
 box.querySelector('[data-lr]').onclick=function(){flip('d'+i);drawD()}
-}).catch(function(){box.innerHTML='<p class="sub">'+t.er+'</p>'})}
+}).catch(function(){box.innerHTML='<p class="m">'+t.er+'</p>'})}
 // ---- tema
-var th=$('#th');
-function applyTheme(m){document.documentElement.classList.toggle('light-mode',m==='light');var mt=document.querySelector('meta[name=theme-color]');if(mt)mt.content=m==='light'?'#f1f5f9':'#0f172a'}
-var m0='';try{m0=localStorage.getItem('theme')||''}catch(e){}
-if(m0!=='light'&&m0!=='dark')m0=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';
-applyTheme(m0);
-th.onclick=function(){m0=m0==='light'?'dark':'light';try{localStorage.setItem('theme',m0)}catch(e){}applyTheme(m0)};
+$('#th').onclick=function(){var l=document.documentElement.classList.toggle('light-mode');localStorage.setItem('theme',l?'light':'dark');window.syncSurface(localStorage.getItem('custom_bg'));var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',localStorage.getItem('custom_bg')||(l?'#f8fafc':'#0b1120'))};
 drawL();drawD();go(0);
 })();
 </script>
