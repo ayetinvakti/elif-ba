@@ -60,15 +60,15 @@ html[dir="rtl"] .back-btn{transform:scaleX(-1)}
 .pt{font-size:.75rem;color:var(--text-muted);margin-top:-6px}
 .card{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:14px}
 .card+.card{margin-top:12px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.lt{position:relative;padding:8px 2px 6px;border-radius:14px;border:1px solid var(--border-color);background:var(--card-bg);color:var(--text-color);cursor:pointer;text-align:center;font-family:inherit}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;direction:rtl}
+.lt{direction:ltr;position:relative;padding:8px 2px 6px;border-radius:14px;border:1px solid var(--border-color);background:var(--card-bg);color:var(--text-color);cursor:pointer;text-align:center;font-family:inherit}
 .lt .a{display:block;font-size:2.1rem;line-height:1.5}
 .lt .n{font-size:.75rem;color:var(--text-muted)}
 .lt.on{border-color:var(--accent-color)}
 .lt.ok::after{content:"✓";position:absolute;top:4px;right:7px;font-size:.75rem;color:var(--accent-color);font-weight:800}
 .ar{font-family:"Amiri","Scheherazade New","Noto Naskh Arabic","Geeza Pro","Traditional Arabic",serif;direction:rtl}
 .big{font-size:5.2rem;line-height:1.4;text-align:center}
-.forms,.hk{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin:6px 0}
+.forms,.hk{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin:6px 0;direction:rtl}
 .hk{grid-template-columns:repeat(3,1fr)}
 .forms .ar{font-size:2.1rem;line-height:1.5}
 .hk .ar{font-size:2.4rem;line-height:1.5}
@@ -89,11 +89,13 @@ h3{font-size:1rem;margin-bottom:4px}
 .ay .ar{font-size:1.75rem;line-height:1.9;text-align:right}
 .ay p{margin:4px 0;font-size:.88rem}
 .pl{border:1px solid var(--accent-color);color:var(--accent-color);background:transparent;border-radius:20px;padding:4px 12px;font-size:.8rem;cursor:pointer;font-family:inherit}
-.ex{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center}
+.ex{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center;direction:rtl}
 .ex .ar{font-size:2rem;line-height:1.7;text-align:center}
 .ex div{text-align:center}.ex small{display:block;font-size:.75rem;color:var(--text-muted)}
+.forms small,.hk small,.ex small{direction:ltr}
+.ok2{font-size:.92rem;color:var(--accent-color);margin:4px 0}
 .sg{font-size:.7rem;color:var(--text-muted);margin-top:6px}
-.cl{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin:4px 0}
+.cl{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin:4px 0;direction:rtl}
 .cl .ar{font-size:1.6rem;padding:0 6px}
 .src{font-size:.75rem;color:var(--text-muted);margin:6px 2px 24px}
 [hidden]{display:none!important}
@@ -110,7 +112,7 @@ html.surf-light.finish-glossy .btn,html.surf-light.finish-glossy .back-btn,html.
 <a href="https://ayetinvakti.github.io/" class="back-btn" aria-label="Geri Dön">←</a>
 <button class="menu-btn" data-drawer-toggle aria-label="Menü" aria-controls="avmDrawer">☰</button>
 </div>
-<button class="th-btn" id="th" aria-label="Tema">◐</button>
+<button class="th-btn" id="th" aria-label="Tema">🌙</button>
 </header>
 <h1 class="page-head" id="h1">Elif-Ba</h1>
 <div class="hero" id="hero"></div>
@@ -127,9 +129,9 @@ html.surf-light.finish-glossy .btn,html.surf-light.finish-glossy .back-btn,html.
 <script>
 (function(){
 var T={
-tr:{sub:"Kur'an okumayı adım adım öğren. Her yaş için.",t:["Harfler","Harekeler","Kurallar","Dualar"],lr:"Öğrendim",un:"Öğrenmedim",pg:"öğrenildi",pick:"Bir harfe dokun",s:["Tek","Başta","Ortada","Sonda"],th:"Kalın harf",inc:"İnce harf",pel:"Peltek harf",nj:"Sonraki harfe bitişmez",jn:"Sonraki harfe bitişir",hh:"Harekeli okunuşu",mh:"Çıkış yeri",ld:"Yükleniyor…",er:"Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.",open:"Aç",close:"Kapat",all:"Hepsini dinle",lg1:"Üstün e · Esre i · Ötre u ile ü arası",lg2:"Üstün a · Esre ı'dan i'ye biten ses · Ötre u",ap:"* Türkçede tam karşılığı yok, okunuş yaklaşıktır. Çıkış yerine bak, mümkünse bir hocadan dinle.",ra:"Ra: üstün ve ötre ile kalın, esre ile ince okunur.",g0:"Fatiha",g1:"Kısa sureler",g2:"Kur'an'dan dualar",src:"Kaynaklar: harf isimleri, çıkış yerleri, kalın/ince harfler, harekeler, işaretler ve özel okunuşlar MEB Kur'an-ı Kerim Hazırlık Sınıfı Ders Kitabı'ndan (2026, 2. Tema: Tecvit), elif lâm harf listeleri ayrıca eğitim kaynaklarıyla karşılaştırılarak alınmıştır. Türkçe okunuş yazıları yaklaşıktır; doğru okuyuş için fem-i muhsin bir hocadan dinlemek gerekir. Ayet metni, Diyanet meali ve ses alquran.cloud'dan canlı gelir."},
-en:{sub:"Learn to read the Quran step by step. For every age.",t:["Letters","Vowels","Rules","Duas"],lr:"Learned",un:"Not yet",pg:"learned",pick:"Tap a letter",s:["Isolated","Initial","Medial","Final"],th:"Heavy letter",inc:"Light letter",pel:"Lisped letter",nj:"Does not join the next letter",jn:"Joins the next letter",hh:"With vowel marks",mh:"Point of articulation",ld:"Loading…",er:"Could not connect. Check your internet and try again.",open:"Open",close:"Close",all:"Play all",lg1:"Ustun e · Esre i · Otre between u and ü",lg2:"Ustun a · Esre from ı to i · Otre u",ap:"* No exact Turkish equivalent; the reading is approximate. See the articulation point and, if possible, listen to a teacher.",ra:"Ra: heavy with ustun and otre, light with esre.",g0:"Al-Fatiha",g1:"Short surahs",g2:"Supplications from the Quran",src:"Sources: Turkish MEB Quran textbook (2026, Tajweed theme). Turkish readings are approximate; learn from a qualified teacher. Verse text, translation and audio are loaded live from alquran.cloud."},
-ar:{sub:"تعلّم قراءة القرآن خطوة بخطوة. لكل الأعمار.",t:["الحروف","الحركات","القواعد","الأدعية"],lr:"تعلّمت",un:"لم أتعلّم",pg:"تم تعلّمه",pick:"اضغط على حرف",s:["منفصل","أول","وسط","آخر"],th:"حرف مفخّم",inc:"حرف مرقّق",pel:"حرف رخو",nj:"لا يتصل بما بعده",jn:"يتصل بما بعده",hh:"مع الحركات",mh:"المخرج",ld:"جارٍ التحميل…",er:"تعذّر الاتصال. تحقّق من الإنترنت وأعد المحاولة.",open:"فتح",close:"إغلاق",all:"استماع للكل",lg1:"",lg2:"",ap:"* لا مقابل تركي دقيق؛ النطق تقريبي. استمع إلى معلّم.",ra:"",g0:"الفاتحة",g1:"السور القصيرة",g2:"أدعية من القرآن",src:"المصادر: كتاب القرآن الكريم لوزارة التربية التركية (2026). النطق التركي تقريبي. النص والترجمة والصوت من alquran.cloud."}
+tr:{sub:"Kur'an okumayı adım adım öğren. Her yaş için.",t:["Harfler","Harekeler","Kurallar","Dualar"],lr:"Öğrendim",un:"Öğrenmedim",pg:"öğrenildi",pick:"Bir harfe dokun",s:["Tek","Başta","Ortada","Sonda"],th:"Kalın harf",inc:"İnce harf",pel:"Peltek harf",nj:"Sonraki harfe bitişmez",jn:"Sonraki harfe bitişir",hh:"Harekeli okunuşu",mh:"Çıkış yeri",ld:"Yükleniyor…",er:"Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.",open:"Aç",close:"Kapat",all:"Hepsini dinle",lg1:"Üstün e · Esre i · Ötre u ile ü arası",lg2:"Üstün a · Esre ı'dan i'ye biten ses · Ötre u",ap:"* Türkçede tam karşılığı yok, okunuş yaklaşıktır. Çıkış yerine bak, mümkünse bir hocadan dinle.",ra:"Ra: üstün ve ötre ile kalın, esre ile ince okunur.",g0:"Fatiha",g1:"Kısa sureler",g2:"Kur'an'dan dualar",oku:"Okunuşu",oku2:"Okunuşu (dua kısmı)",okn:"Bu duanın Türkçe okunuşu kaynak doğrulamasından sonra eklenecek.",okc:"Türkçe okunuş yalnızca ezberi kolaylaştırmak için yardımcıdır; Kur'an Arapça metinden okunur. Okunuşları İslam ve İhsan sitesinden aldım, doğru okuyuş için bir hocadan dinle.",src:"Kaynaklar: harf isimleri, çıkış yerleri, kalın/ince harfler, harekeler, işaretler ve özel okunuşlar MEB Kur'an-ı Kerim Hazırlık Sınıfı Ders Kitabı'ndan (2026, 2. Tema: Tecvit), elif lâm harf listeleri ayrıca eğitim kaynaklarıyla karşılaştırılarak alınmıştır. Türkçe okunuş yazıları yaklaşıktır; doğru okuyuş için fem-i muhsin bir hocadan dinlemek gerekir. Ayet metni, Diyanet meali ve ses alquran.cloud'dan canlı gelir. Dualardaki Türkçe okunuşlar İslam ve İhsan sitesindendir."},
+en:{sub:"Learn to read the Quran step by step. For every age.",t:["Letters","Vowels","Rules","Duas"],lr:"Learned",un:"Not yet",pg:"learned",pick:"Tap a letter",s:["Isolated","Initial","Medial","Final"],th:"Heavy letter",inc:"Light letter",pel:"Lisped letter",nj:"Does not join the next letter",jn:"Joins the next letter",hh:"With vowel marks",mh:"Point of articulation",ld:"Loading…",er:"Could not connect. Check your internet and try again.",open:"Open",close:"Close",all:"Play all",lg1:"Ustun e · Esre i · Otre between u and ü",lg2:"Ustun a · Esre from ı to i · Otre u",ap:"* No exact Turkish equivalent; the reading is approximate. See the articulation point and, if possible, listen to a teacher.",ra:"Ra: heavy with ustun and otre, light with esre.",g0:"Al-Fatiha",g1:"Short surahs",g2:"Supplications from the Quran",oku:"Turkish reading",oku2:"Turkish reading (dua part)",okn:"The Turkish reading of this dua will be added after source verification.",okc:"The Turkish reading is only an aid for memorising; the Quran is read from the Arabic text. Readings are from islamveihsan.com.",src:"Sources: Turkish MEB Quran textbook (2026, Tajweed theme). Turkish readings are approximate; learn from a qualified teacher. Verse text, translation and audio are loaded live from alquran.cloud."},
+ar:{sub:"تعلّم قراءة القرآن خطوة بخطوة. لكل الأعمار.",t:["الحروف","الحركات","القواعد","الأدعية"],lr:"تعلّمت",un:"لم أتعلّم",pg:"تم تعلّمه",pick:"اضغط على حرف",s:["منفصل","أول","وسط","آخر"],th:"حرف مفخّم",inc:"حرف مرقّق",pel:"حرف رخو",nj:"لا يتصل بما بعده",jn:"يتصل بما بعده",hh:"مع الحركات",mh:"المخرج",ld:"جارٍ التحميل…",er:"تعذّر الاتصال. تحقّق من الإنترنت وأعد المحاولة.",open:"فتح",close:"إغلاق",all:"استماع للكل",lg1:"",lg2:"",ap:"* لا مقابل تركي دقيق؛ النطق تقريبي. استمع إلى معلّم.",ra:"",g0:"الفاتحة",g1:"السور القصيرة",g2:"أدعية من القرآن",oku:"النطق التركي",oku2:"النطق التركي (جزء الدعاء)",okn:"سيُضاف النطق التركي لهذا الدعاء بعد التحقق من المصدر.",okc:"النطق التركي مجرد عون على الحفظ؛ والقرآن يُقرأ من النص العربي.",src:"المصادر: كتاب القرآن الكريم لوزارة التربية التركية (2026). النطق التركي تقريبي. النص والترجمة والصوت من alquran.cloud."}
 };
 var lg=T[localStorage.getItem('user_lang')]?localStorage.getItem('user_lang'):'tr',t=T[lg];
 var $=function(s){return document.querySelector(s)};
@@ -143,7 +145,7 @@ var LET=[['ا','Elif','','Boğazın göğse bitişen kısmından çıkarılır.'
 var HEAVY='خصضطظغق',NJ='ادذرزو',PEL='ثذظ',APX='اثحخذضظعغ';
 function reads(c,s){var h=HEAVY.indexOf(c)>-1;if(c==='ر')return['ra','ri','ru'];return h?[s+'a',s+'ı~i',s+'u']:[s+'e',s+'i',s+'u~'+s+'ü']}
 var KAM='ابجحخعغفقكمويه',SEM='تثدذرزسشصضطظلن';
-var D=[[0,'Fatiha',[[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7]]],[1,'Kevser',[[108,1],[108,2],[108,3]]],[1,'İhlâs',[[112,1],[112,2],[112,3],[112,4]]],[1,'Felak',[[113,1],[113,2],[113,3],[113,4],[113,5]]],[1,'Nâs',[[114,1],[114,2],[114,3],[114,4],[114,5],[114,6]]],[2,"Rabbenâ âtinâ (Bakara 201)",[[2,201]]],[2,"Rabbenâ lâ tüâhiznâ (Bakara 286)",[[2,286]]],[2,"Rabbenâ lâ tüzığ kulûbenâ (Âl-i İmrân 8)",[[3,8]]],[2,"Rabbenâ zalemnâ (A'râf 23)",[[7,23]]],[2,"Rabbirhamhümâ (İsrâ 24)",[[17,24]]],[2,"Rabbişrah lî sadrî (Tâhâ 25-28)",[[20,25],[20,26],[20,27],[20,28]]],[2,"Rabbiğfir verham (Mü'minûn 118)",[[23,118]]],[2,"Rabbenâ heb lenâ min ezvâcinâ (Furkân 74)",[[25,74]]],[2,"Rabbi innî limâ enzelte (Kasas 24)",[[28,24]]],[2,"Rabbiğfir lî ve li-vâlideyye (Nûh 28)",[[71,28]]]];
+var D=[[0,'Fatiha',[[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7]]],[1,'Kevser',[[108,1],[108,2],[108,3]]],[1,'İhlâs',[[112,1],[112,2],[112,3],[112,4]]],[1,'Felak',[[113,1],[113,2],[113,3],[113,4],[113,5]]],[1,'Nâs',[[114,1],[114,2],[114,3],[114,4],[114,5],[114,6]]],[2,"Rabbenâ âtinâ (Bakara 201)",[[2,201]]],[2,"Rabbenâ lâ tüâhiznâ (Bakara 286)",[[2,286]]],[2,"Rabbenâ lâ tüzığ kulûbenâ (Âl-i İmrân 8)",[[3,8]]],[2,"Rabbenâ zalemnâ (A'râf 23)",[[7,23]]],[2,"Rabbirhamhümâ (İsrâ 24)",[[17,24]]],[2,"Rabbişrah lî sadrî (Tâhâ 25-28)",[[20,25],[20,26],[20,27],[20,28]]],[2,"Rabbiğfir verham (Mü'minûn 118)",[[23,118]]],[2,"Rabbenâ heb lenâ min ezvâcinâ (Furkân 74)",[[25,74]]],[2,"Rabbi innî limâ enzelte (Kasas 24)",[[28,24]]],[2,"Rabbiğfir lî ve li-vâlideyye (Nûh 28)",[[71,28]]],[2,"Rabbenâğfirlî (İbrâhîm 41)",[[14,41]]]];
 // harekeler ve işaretler: [başlık, işaret, açıklama, [örnek, okunuş]]
 var H=[
 ['Üstün',F,'İnce harflere "e", kalın harflere "a" sesi verir. Örnek: se / sa.',[['س'+F,'se'],['ص'+F,'sa']]],
@@ -200,6 +202,7 @@ var cards=[
 ];
 var h='';cards.forEach(function(c){h+='<div class="card"><h3>'+c[0]+'</h3>'+c[1]+'</div>'});$('#p2').innerHTML=h})();
 // ---- dualar
+var OKU={"1:1":"Bismillâhirrahmanirrahim.","1:2":"Elhamdülillâhi rabbil’alemin.","1:3":"Errahmânir’rahim.","1:4":"Mâliki yevmiddin.","1:5":"İyyâke na’budu ve iyyâke neste’în.","1:6":"İhdinessırâtel mustakîm.","1:7":"Sırâtellezine en’amte aleyhim ğayrilmağdûbi aleyhim ve leddâllîn.","108:1":"İnnâ a’taynâkelkevser.","108:2":"Fesalli lirabbike venhar.","108:3":"İnne şânieke huvel’ebter.","112:1":"Kul hüvellâhü ehad.","112:2":"Allâhussamed.","112:3":"Lem yelid ve lem yûled.","112:4":"Ve lem yekün lehû küfüven ehad.","113:1":"Kul e’ûzu birabbilfelak.","113:2":"Min şerri mâ halak.","113:3":"Ve min şerri ğasikın izâ vekab.","113:4":"Ve min şerrinneffâsâti fil’ukad.","113:5":"Ve min şerri hâsidin izâ hased.","114:1":"Kul e’ûzu birabbinnâsi.","114:2":"Melikinnâsi.","114:3":"İlâhinnâs.","114:4":"Min şerrilvesvâsilhannâs.","114:5":"Ellezî yuvesvisu fî sudûrinnâsi.","114:6":"Minelcinneti vennâs.","2:201":"Rabbenâ âtina fid’dünyâ haseneten ve fil’âhireti haseneten ve kınâ azâbennâr.","3:8":"Rabbenâ lâ tüzığ kulûbenâ ba’de iz hedeytenâ veheb lenâ min ledünke rahmeten, inneke entel vehhâb.","20:25":"Rabbişrah lî sadrî.","20:26":"Ve yessir lî emrî.","20:27":"Vahlul ukdeten min lisânî.","20:28":"Yefkahû kavlî.","25:74":"Rabbenâ heb lenâ min ezvâcinâ ve zurriyyâtinâ kurrate a’yunin vec’alnâ lil muttakîne imâmâ.","14:41":"Rabbenâğfirlî ve li-vâlideyye ve lil-mü’minîne yevme yekûmu’l hisâb."},PFX={"2:201":1,"25:74":1};
 var P3=$('#p3'),open={},cache={},au=null,q=[];
 function stop(){q=[];if(au){au.pause();au=null}}
 function playUrl(u,done){if(au)au.pause();au=new Audio(u);au.onended=done||null;au.play().catch(function(){})}
@@ -209,12 +212,12 @@ function drawD(){
 var h='',last=-1,gn=[t.g0,t.g1,t.g2];
 D.forEach(function(x,i){if(x[0]!==last){h+='<div class="gt">'+gn[x[0]]+'</div>';last=x[0]}
 h+='<div class="card"><div class="dr"><b>'+x[1]+'</b><button class="pl" data-o="'+i+'">'+(open[i]?t.close:t.open)+'</button></div><div id="d'+i+'"'+(open[i]?'':' hidden')+'></div></div>'});
-P3.innerHTML=h;
+P3.innerHTML='<p class="m">'+t.okc+'</p>'+h;
 [].forEach.call(P3.querySelectorAll('[data-o]'),function(b){b.onclick=function(){var i=+b.dataset.o;stop();open[i]=!open[i];drawD();if(open[i])fill(i)}});
 D.forEach(function(x,i){if(open[i])fill(i)});prog()}
 function fill(i){var box=$('#d'+i),x=D[i];box.innerHTML='<p class="m">'+t.ld+'</p>';
 Promise.all(x[2].map(function(r){return load(r[0],r[1])})).then(function(res){
-var h='';res.forEach(function(v,j){h+='<div class="ay"><div class="ar">'+esc(v.ar)+'</div><p>'+esc(v.tr)+'</p><button class="pl" data-a="'+j+'">▶</button></div>'});
+var h='',miss=false;res.forEach(function(v,j){var k=x[2][j][0]+':'+x[2][j][1],o=OKU[k];if(!o)miss=true;h+='<div class="ay"><div class="ar">'+esc(v.ar)+'</div>'+(o?'<p class="ok2"><b>'+(PFX[k]?t.oku2:t.oku)+':</b> '+esc(o)+'</p>':'')+'<p>'+esc(v.tr)+'</p><button class="pl" data-a="'+j+'">▶</button></div>'});if(miss)h+='<p class="m">'+t.okn+'</p>';
 h+='<button class="btn o" data-all="1">▶ '+t.all+'</button><button class="btn'+(ST['d'+i]?' o':'')+'" data-lr="1">'+(ST['d'+i]?'✓ '+t.un:t.lr)+'</button>';
 box.innerHTML=h;
 [].forEach.call(box.querySelectorAll('[data-a]'),function(b){b.onclick=function(){stop();playUrl(res[+b.dataset.a].au)}});
@@ -222,7 +225,10 @@ box.querySelector('[data-all]').onclick=function(){stop();q=res.map(function(v){
 box.querySelector('[data-lr]').onclick=function(){flip('d'+i);drawD()}
 }).catch(function(){box.innerHTML='<p class="m">'+t.er+'</p>'})}
 // ---- tema
-$('#th').onclick=function(){var l=document.documentElement.classList.toggle('light-mode');localStorage.setItem('theme',l?'light':'dark');window.syncSurface(localStorage.getItem('custom_bg'));var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',localStorage.getItem('custom_bg')||(l?'#f8fafc':'#0b1120'))};
+var thb=$('#th');
+function thIcon(){thb.textContent=document.documentElement.classList.contains('light-mode')?'☀️':'🌙'}
+thb.onclick=function(){var l=document.documentElement.classList.toggle('light-mode');localStorage.setItem('theme',l?'light':'dark');window.syncSurface(localStorage.getItem('custom_bg'));var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',localStorage.getItem('custom_bg')||(l?'#f8fafc':'#0b1120'));thIcon()};
+thIcon();
 drawL();drawD();go(0);
 })();
 </script>
